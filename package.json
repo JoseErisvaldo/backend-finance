@@ -1,0 +1,26 @@
+{
+  "name": "backend-finance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "isrc/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.108.2",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "install": "^0.13.0",
+    "nodemon": "^3.1.14",
+    "npm": "^11.17.0",
+    "ws": "^8.21.0"
+  },
+  "dependencies": {
+    "stripe": "^22.3.0"
+  }
+}
