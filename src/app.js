@@ -3,6 +3,7 @@ import cors from "cors";
 import subscriptionsWebHookRoute from "./routes/subscriptionsWebHook.js";
 import plansRoute from "./routes/plans.js";
 import authRoutes from "./routes/authRoutes.js";
+import checkoutWithStripeRoute from "./routes/checkoutWithStripeRoute.js";
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.use(express.json());
 
 app.use("/auth", authRoutes);
 app.use("/plans", plansRoute);
+app.use("/checkoutWithStripe", checkoutWithStripeRoute);
 
 export default app;

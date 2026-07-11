@@ -192,8 +192,12 @@ const manageSubscriptionStatusChange = async (
     quantity: subscription.items.data[0].quantity ?? 1,
     cancel_at_period_end: subscription.cancel_at_period_end,
     created: new Date(subscription.created * 1000),
-    current_period_start: new Date(subscription.current_period_start * 1000),
-    current_period_end: new Date(subscription.current_period_end * 1000),
+    current_period_start: subscription.current_period_start
+      ? new Date(subscription.current_period_start * 1000)
+      : new Date(subscription.created * 1000),
+    current_period_end: subscription.current_period_end
+      ? new Date(subscription.current_period_end * 1000)
+      : new Date(subscription.created * 1000),
     ended_at: subscription.ended_at
       ? new Date(subscription.ended_at * 1000)
       : null,
