@@ -1,4 +1,4 @@
-import CheckoutWithStripeService from "../services/checkoutWithStripeService.js";
+import CheckoutWithStripeService from "../services/CheckoutWithStripeService.js";
 
 class CheckoutWithStripeController {
   async checkout(req, res) {

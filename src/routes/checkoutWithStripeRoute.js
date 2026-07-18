@@ -1,5 +1,5 @@
 import { Router } from "express";
-import CheckoutWithStripeController from "../controllers/CheckoutWithStripeController.js";
+import CheckoutWithStripeController from "../controllers/checkoutWithStripeController.js";
 
 const router = Router();
 

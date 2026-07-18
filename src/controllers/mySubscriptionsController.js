@@ -1,4 +1,4 @@
-import MySubscriptionService from "../services/MySubscriptionService.js";
+import MySubscriptionService from "../services/mySubscriptionService.js";
 
 class MySubscriptionsController {
   async getMySubscriptions(req, res) {
