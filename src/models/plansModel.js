@@ -27,7 +27,8 @@ class PlansModel {
           )
         `,
         )
-        .eq("active", true);
+        .eq("active", true)
+        .eq("prices.active", true);
 
       if (error) {
         throw new Error(error.message);
