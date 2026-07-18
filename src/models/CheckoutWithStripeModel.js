@@ -61,7 +61,7 @@ const checkoutWithStripe = async ({ body, headers }) => {
           quantity: 1,
         },
       ],
-      cancel_url: getURL("app/products"),
+      cancel_url: getURL("app/subscriptions"),
       success_url: getURL("/payment/success"),
     };
 

@@ -17,7 +17,7 @@ app.use("/", homeRoute);
 // Enable CORS for the frontend during development
 app.use(
   cors({
-    origin: "https://app-finance-swart.vercel.app",
+    origin: ["http://localhost:5173", "https://app-finance-swart.vercel.app"],
     credentials: true,
   }),
 );
