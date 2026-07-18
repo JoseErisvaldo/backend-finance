@@ -4,6 +4,8 @@ import subscriptionsWebHookRoute from "./routes/subscriptionsWebHook.js";
 import plansRoute from "./routes/plans.js";
 import authRoutes from "./routes/authRoutes.js";
 import checkoutWithStripeRoute from "./routes/checkoutWithStripeRoute.js";
+import mySubscriptionsRoute from "./routes/mySubscriptionsRoute.js";
+import { limiter } from "./helpers/limiter.js";
 
 const app = express();
 
@@ -16,11 +18,12 @@ app.use(
     credentials: true,
   }),
 );
-
+app.use(limiter);
 app.use(express.json());
 
 app.use("/auth", authRoutes);
 app.use("/plans", plansRoute);
 app.use("/checkoutWithStripe", checkoutWithStripeRoute);
+app.use("/mySubscriptions", mySubscriptionsRoute);
 
 export default app;
