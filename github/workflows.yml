@@ -1,0 +1,38 @@
+name: Supabase Migrations
+
+on:
+  push:
+    branches:
+      - main
+      - homol
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Select Supabase project
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            echo "PROJECT_REF=${{ secrets.SUPABASE_PROJECT_REF_PROD }}" >> $GITHUB_ENV
+          else
+            echo "PROJECT_REF=${{ secrets.SUPABASE_PROJECT_REF_HOMOL }}" >> $GITHUB_ENV
+          fi
+
+      - name: Supabase Login
+        run: npx supabase login --token ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+
+      - name: Link Supabase project
+        run: npx supabase link --project-ref $PROJECT_REF
+
+      - name: Run database migrations
+        run: npx supabase db push --yes
