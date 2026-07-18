@@ -2,7 +2,7 @@
   "name": "backend-finance",
   "version": "1.0.0",
   "description": "",
-  "main": "isrc/server.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"

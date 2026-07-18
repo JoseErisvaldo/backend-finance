@@ -1,7 +1,10 @@
 import Stripe from "stripe";
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("Missing STRIPE_SECRET_KEY");
+let stripe = null;
+if (process.env.STRIPE_SECRET_KEY) {
+  stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+} else {
+  console.error("Missing STRIPE_SECRET_KEY. Stripe features will be disabled.");
 }
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+export { stripe };
