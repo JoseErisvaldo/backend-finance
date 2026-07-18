@@ -5,11 +5,14 @@ import plansRoute from "./routes/plans.js";
 import authRoutes from "./routes/authRoutes.js";
 import checkoutWithStripeRoute from "./routes/checkoutWithStripeRoute.js";
 import mySubscriptionsRoute from "./routes/mySubscriptionsRoute.js";
+import homeRoute from "./routes/home.js";
 import { limiter } from "./helpers/limiter.js";
 
 const app = express();
 
 app.use("/webhook", subscriptionsWebHookRoute);
+
+app.use("/", homeRoute);
 
 // Enable CORS for the frontend during development
 app.use(
