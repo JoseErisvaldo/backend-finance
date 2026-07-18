@@ -1,4 +1,4 @@
-import PlansService from "../services/PlansService.js";
+import PlansService from "../services/plansService.js";
 
 class PlansController {
   async getPlans(req, res) {
