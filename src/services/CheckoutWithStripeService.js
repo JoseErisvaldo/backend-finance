@@ -1,4 +1,4 @@
-import CheckoutWithStripeModel from "../models/checkoutWithStripeModel.js";
+import CheckoutWithStripeModel from "../models/CheckoutWithStripeModel.js";
 
 class CheckoutWithStripeService {
   async checkout({ body, headers }) {

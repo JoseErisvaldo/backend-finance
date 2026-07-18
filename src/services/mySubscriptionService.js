@@ -1,4 +1,4 @@
-import MySubscriptionWebHookModel from "../models/MySubscriptionWebHookModel.js";
+import MySubscriptionWebHookModel from "../models/mySubscriptionWebHookModel.js";
 
 class MySubscriptionService {
   async getSubscriptionsByUserId(userId) {
